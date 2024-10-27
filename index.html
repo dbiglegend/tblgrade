@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GradeChecker</title>
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container col-lg-8 col-md-8 col-12 my-lg-5 my-5">
+        <div class="container text-center">
+        <img src="./exam-result-vector-47319774-removebg-preview.png" alt="" width="200">
+        <div>
+            <h3 class="text-black fw-bold w-100 w-lg-50">
+                Enter your score to check your grade
+            </h3>
+            <input type="number" placeholder="Enter your score" id="score" class=" w-lg-50 w-100 p-2 rounded" value="" autofocus>
+            <div class="mt-3">
+            <button onclick="gradeMe()" class="p-1 p-lg-2 rounded-2 w-lg-25 w-50 bg-success text-white">
+                <h4>Check Here</h4>
+            </button>
+            </div>
+        </div>
+        <div class="mt-3">
+            <h3 class="text-white fw-bold">Your grade will show below</h3>
+            <p id="showResult" class="text-white fs-2 fw-bolder"></p>
+        </div>
+    </div>
+    </div>
+    <script>
+        var AudioFail = new Audio('school.m4a')
+        var AudioPassE = new Audio('crying.m4a')
+        var AudioPass = new Audio('Recording.m4a')
+        var AudioCredit = new Audio('breathing.m4a')
+        var AudioGood = new Audio('alhamdulillah.m4a')
+        var AudioExcellent = new Audio('thank u God.m4a')
+
+    function gradeMe(){
+            if(score.value == ''){
+                alert('fill in your score')
+            } else{
+                var userScore = Number(score.value)
+                if(userScore >=0 && userScore <40){
+                    showResult.innerHTML = ''
+                    console.log(showResult.innerHTML = 'F-FAIL (Better luck next time werey)');
+                    AudioFail.play()
+
+                } else if(userScore >=40 && userScore <45){
+                    console.log(showResult.innerHTML = 'E-PASS (God has saved you)');
+                    AudioPassE.play()
+
+                } else if(userScore >=45 && userScore <50){
+                    console.log(showResult.innerHTML = 'D-PASS (Thank God)');
+                    AudioPass.play()
+                    
+                } else if(userScore >=50 && userScore <65){
+                    console.log(showResult.innerHTML = 'C-CREDIT (You tried)');
+                    AudioCredit.play()
+                    
+                } else if(userScore>=65 && userScore <75){
+                    console.log(showResult.innerHTML = 'B-GOOD (You did well)');
+                    AudioGood.play()
+                    
+                } else if(userScore>=75 && userScore <=100){
+                    console.log(showResult.innerHTML = 'A-EXCELLENT (A round of applause)');
+                    AudioExcellent.play()
+                } 
+                
+                else if(score.value != 1 && 100){
+                    console.log(alert('WEREY,Kindly do well and fill in your correct score ') );
+                    
+                }
+            }
+        }
+    </script>
+</body>
+</html>

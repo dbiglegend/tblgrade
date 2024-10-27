@@ -1,0 +1,9 @@
+body{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url(./pexels-olia-danilevich-5088017.jpg);
+  background-size: cover;
+  background-position: center;
+
+}
